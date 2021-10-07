@@ -8,6 +8,8 @@ import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
 
 class GroupFocusableEditText : AppCompatEditText {
+    private var parentRect = Rect()
+
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
@@ -19,7 +21,6 @@ class GroupFocusableEditText : AppCompatEditText {
     override fun getFocusedRect(r: Rect?) {
         super.getFocusedRect(r)
         getFocusableGroupLayout()?.let { view ->
-            val parentRect = Rect()
             view.getFocusedRect(parentRect)
             r?.bottom = parentRect.bottom
         }
@@ -28,9 +29,22 @@ class GroupFocusableEditText : AppCompatEditText {
     override fun getGlobalVisibleRect(r: Rect?, globalOffset: Point?): Boolean {
         val result = super.getGlobalVisibleRect(r, globalOffset)
         getFocusableGroupLayout()?.let { view ->
-            val parentRect = Rect()
             view.getGlobalVisibleRect(parentRect)
             r?.bottom = parentRect.bottom
+        }
+        return result
+    }
+
+    override fun requestRectangleOnScreen(rectangle: Rect?): Boolean {
+        val result = super.requestRectangleOnScreen(rectangle)
+        getFocusableGroupLayout()?.let { view ->
+            parentRect.set(
+                0,
+                0,
+                view.width,
+                view.height
+            )
+            view.requestRectangleOnScreen(parentRect, true)
         }
         return result
     }
