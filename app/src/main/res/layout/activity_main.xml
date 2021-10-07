@@ -6,6 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/buttonDialog"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/dialog_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginTop="32dp" />
+
+    <Button
+        android:id="@+id/buttonBottomSheet"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/bottom_sheet_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonDialog" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/defaultCardView"
         android:layout_width="wrap_content"
@@ -13,36 +34,31 @@
         app:cardBackgroundColor="#FAFAFA"
         app:cardCornerRadius="8dp">
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <LinearLayout
-                android:layout_width="170dp"
+            <TextView
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_marginVertical="8dp"
+                android:text="@string/default_title"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
-                    android:text="Regular\nLayout"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+            <com.akexorcist.groupfocusable.GroupFocusableEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
 
-                <com.akexorcist.groupfocusable.GroupFocusableEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="OK" />
-            </LinearLayout>
-        </FrameLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/ok" />
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -66,8 +82,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="8dp"
-                    android:text="Group Focusable\nLayout"
-                    android:textSize="16sp"
+                    android:text="@string/group_focusable_title"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                     android:textStyle="bold" />
 
                 <com.akexorcist.groupfocusable.GroupFocusableEditText
@@ -79,7 +95,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="OK" />
+                    android:text="@string/ok" />
             </LinearLayout>
         </com.akexorcist.groupfocusable.GroupFocusableLayout>
     </androidx.cardview.widget.CardView>

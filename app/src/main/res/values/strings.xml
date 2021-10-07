@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">GroupFocusable</string>
+    <string name="dialog_menu">Show Dialog</string>
+    <string name="bottom_sheet_menu">Show Bottom Sheet</string>
+    <string name="default_title">Default</string>
+    <string name="group_focusable_title">Group Focusable</string>
+    <string name="dialog_title">Dialog</string>
+    <string name="bottom_sheet_title">Bottom Sheet</string>
+    <string name="ok">OK</string>
 </resources>
