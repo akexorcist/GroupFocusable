@@ -6,7 +6,7 @@ Prevent the view behind on-screen keyboard when edit text is focused in Android 
 ## Download
 **Gradle**
 ```
-implementation 'com.akexorcist:group-focusable:1.0.0'
+implementation 'com.akexorcist:group-focusable:1.0.1'
 ```
 
 ## Usage
