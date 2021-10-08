@@ -29,7 +29,7 @@ class GroupFocusableEditText : AppCompatEditText {
     override fun getGlobalVisibleRect(r: Rect?, globalOffset: Point?): Boolean {
         val result = super.getGlobalVisibleRect(r, globalOffset)
         getFocusableGroupLayout()?.let { view ->
-            view.getGlobalVisibleRect(parentRect)
+            view.getGlobalVisibleRect(parentRect, globalOffset)
             r?.bottom = parentRect.bottom
         }
         return result
