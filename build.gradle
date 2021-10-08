@@ -5,8 +5,8 @@ buildscript {
         targetSdkVersion = 30
         minSdkVersion = 21
 
-        versionName = '1.0.1'
-        versionCode = 10001
+        versionName = '1.0.2'
+        versionCode = 10002
 
         libraryName = 'GroupFocusable'
         libraryDescription = 'Prevent the view behind on-screen keyboard when edit text is focused'
